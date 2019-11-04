@@ -1,0 +1,38 @@
+{
+  "name": "tradshift",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./server/index.js",
+    "start-dev": "nodemon ./server/index.js",
+    "build": "webpack --config webpack.config.js -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zjthomas/tradshift.git"
+  },
+  "author": "Zach Thomas",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zjthomas/tradshift/issues"
+  },
+  "homepage": "https://github.com/zjthomas/tradshift#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
+    "react-tradeshift-ui": "^2.4.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/preset-env": "^7.6.3",
+    "@babel/preset-react": "^7.6.3",
+    "babel-loader": "^8.0.6",
+    "jest": "^24.9.0",
+    "nodemon": "^1.19.4",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  }
+}
