@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "start": "node ./server/index.js",
+    "start": "webpack --config webpack.config.js && node ./server/index.js",
     "start-dev": "nodemon ./server/index.js",
     "build": "webpack --config webpack.config.js -w"
   },
