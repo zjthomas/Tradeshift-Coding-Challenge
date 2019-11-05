@@ -1,4 +1,4 @@
-# tradshift
+# Tradshift Coding Challenge
 
 ## Table of Contents
 
@@ -27,7 +27,7 @@ $ npm install
 $ npm run build
 $ npm run start-dev
 $ open http://localhost:3000 
-$ npm test
+$ npm test (to run testing suite)
 
 ```
 
