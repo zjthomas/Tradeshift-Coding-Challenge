@@ -68,13 +68,11 @@ class App extends React.Component {
         display: 'flex',
         flexDirection: 'row',
       }}>
-        
+
         <Form 
         children={formChildren} 
         style={{
           width: '300px',
-          display: 'flex',
-          flexDirection: 'column',
           marginRight: '50px'
         }}
         />

@@ -24,7 +24,7 @@ $ open http://localhost:3000
 ```bash
 $ npm install
 $ npm run build
-$ npm start-dev
+$ npm run start-dev
 $ open http://localhost:3000 
 $ npm test
 
