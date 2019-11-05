@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, Form } from 'react-tradeshift-ui/dist/components';
+import axios from 'axios';
 
 class App extends React.Component {
 
@@ -22,13 +23,16 @@ class App extends React.Component {
 
     if (!!side1 && !!side2 && !!side3) {
       
-      fetch(`/triangle?side1=${side1}&side2=${side2}&side3=${side3}`, {
-        method: 'GET',
+      axios.get('/triangle/type', {
+        params:{
+          side1,
+          side2,
+          side3
+        }
+      }).then(response => {
+        this.setState({triangle: response.data})
       })
-      .then(data => data.json())
-      .then(data => {
-        this.setState({triangle: data})
-      }).catch(err => console.log(err));
+      .catch(error => console.log(error));
 
     } else {
       window.alert('Triangles need 3 sides');
