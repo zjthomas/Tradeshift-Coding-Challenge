@@ -29,14 +29,14 @@ const isIsosceles = (s1, s2, s3) => {
 const typeOfTriangle = (s1 = 0, s2 = 0, s3 = 0) => {
   if (isTriangle(s1, s2, s3)) {
     if (isEquilateral(s1, s2, s3)) {
-      return 'Equilateral';
+      return 'Equilateral Triangle';
     } else if (isIsosceles(s1, s2, s3)) {
-      return 'Isosceles';
+      return 'Isosceles Triangle';
     } else {
-      return 'Scalene';
+      return 'Scalene Triangle';
     }
   } else {
-    return 'Not a Valid';
+    return 'Not a Valid Triangle';
   }
 }
 

@@ -78,7 +78,7 @@ class App extends React.Component {
         />
 
         {triangle && 
-          <h2>{`${triangle} Triangle`}</h2>
+          <h2>{`${triangle}`}</h2>
         }
 
       </div>

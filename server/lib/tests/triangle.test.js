@@ -3,19 +3,19 @@ const { isTriangle, isEquilateral, isIsosceles, typeOfTriangle } = require('../t
 describe('Triangle', () => {
 
   describe('isTriangle', () => {
-    test('Side Length of Zero', () => {
+    test('Side Lengths of Zero', () => {
       expect(isTriangle(0,0,0)).toBe(false);
     });
 
-    test('Side Length of Zero', () => {
+    test('One Negative Side Length', () => {
       expect(isTriangle(3,4,-5)).toBe(false);
     });
 
-    test('Side Length of Zero', () => {
+    test('Two Negative Side Lengths', () => {
       expect(isTriangle(3,-4,-5)).toBe(false);
     });
 
-    test('Side Length of Zero', () => {
+    test('Three Negative Side Lengths', () => {
       expect(isTriangle(-3,-4,-5)).toBe(false);
     });
 
@@ -59,32 +59,32 @@ describe('Triangle', () => {
 
   describe('typeOfTriangle', () => {
 
-    test('Non-Triangle', () => {
-      expect(typeOfTriangle(10,5,2)).toBe('Not a Valid');
+    test('Non-Triangle: Improper Sides', () => {
+      expect(typeOfTriangle(10,5,2)).toBe('Not a Valid Triangle');
     });
 
-    test('Non-Triangle', () => {
-      expect(typeOfTriangle()).toBe('Not a Valid');
+    test('Non-Triangle: Zero Sides', () => {
+      expect(typeOfTriangle()).toBe('Not a Valid Triangle');
     });
 
-    test('Non-Triangle', () => {
-      expect(typeOfTriangle(10,5)).toBe('Not a Valid');
+    test('Non-Triangle: Two Sides', () => {
+      expect(typeOfTriangle(10,5)).toBe('Not a Valid Triangle');
     });
     
-    test('Non-Triangle', () => {
-      expect(typeOfTriangle(10)).toBe('Not a Valid');
+    test('Non-Triangle: One Side', () => {
+      expect(typeOfTriangle(10)).toBe('Not a Valid Triangle');
     });
 
     test('Equilateral Triangle', () => {
-      expect(typeOfTriangle(5, 5, 5)).toBe('Equilateral');
+      expect(typeOfTriangle(5, 5, 5)).toBe('Equilateral Triangle');
     });
 
     test('Isosceles Triangle', () => {
-      expect(typeOfTriangle(6, 3, 6)).toBe('Isosceles');
+      expect(typeOfTriangle(6, 3, 6)).toBe('Isosceles Triangle');
     });
 
     test('Scalene Triangle', () => {
-      expect(typeOfTriangle(3,4,5)).toBe('Scalene');
+      expect(typeOfTriangle(3,4,5)).toBe('Scalene Triangle');
     });
   });
 });
