@@ -34,12 +34,18 @@ describe('Triangle', () => {
     test('Isosceles Triangle', () => {
       expect(isIsosceles(3, 3, 2)).toBe(true);
     });
+    
+    test('Isosceles Triangle', () => {
+      expect(isIsosceles(3, 2, 3)).toBe(true);
+    });
+
+
   });
 
   describe('typeOfTriangle', () => {
 
     test('Non-Triangle', () => {
-      expect(typeOfTriangle(10,5,2)).toBe('Not a triangle');
+      expect(typeOfTriangle(10,5,2)).toBe('Not a Valid');
     });
 
     test('Equilateral Triangle', () => {

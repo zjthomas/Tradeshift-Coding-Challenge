@@ -6,7 +6,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      modal: false,
+      triangle: undefined,
     }
     this.submit = this.submit.bind(this);
     this.closeModal = this.closeModal.bind(this);
@@ -16,14 +16,21 @@ class App extends React.Component {
   submit(e) {
     e.persist();
     e.preventDefault();
+
     const side1 = e.target.form[1].value;
     const side2 = e.target.form[3].value;
     const side3 = e.target.form[5].value;
-    console.log(!!side3);
+
     if (!!side1 && !!side2 && !!side3) {
+
       fetch(`/sides/${side1}/${side2}/${side3}`, {
         method: 'GET',
       })
+      .then(data => data.json())
+      .then(data => {
+        this.setState({triangle: data})
+      }).catch(err => console.log(err));
+
     } else {
       // this.openModal();
       window.alert('Triangles need 3 sides');
@@ -39,6 +46,7 @@ class App extends React.Component {
   }
 
   render() {
+    const { triangle } = this.state;
     const formChildren = [
       <fieldset key="1">
         <label>
@@ -65,15 +73,24 @@ class App extends React.Component {
       </fieldset>,
     ];
     return (
-      <div>
+      <div style={{
+        display: 'flex',
+        flexDirection: 'row',
+      }}>
         <Form 
         children={formChildren} 
         style={{
           width: '300px',
           display: 'flex',
-          flexDirection: 'column'
+          flexDirection: 'column',
+          marginRight: '50px'
         }}
         />
+
+        {triangle && 
+          <h2>{`${triangle} Triangle`}</h2>
+        }
+
         {/* <Modal 
           title="error"
           isOpen={this.state.modal}
