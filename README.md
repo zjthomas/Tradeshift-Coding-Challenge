@@ -1,4 +1,4 @@
-# Tradshift Coding Challenge
+# Tradeshift Coding Challenge
 
 ## Table of Contents
 
